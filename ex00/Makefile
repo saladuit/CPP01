@@ -6,22 +6,17 @@
 #    By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /    #
 #                                                  (|     | )|_| |_| |>  <     #
 #    Created: 2022/07/07 17:49:38 by safoh        /'\_   _/`\__|\__,_/_/\_\    #
-#    Updated: 2022/09/18 20:28:06 by safoh        \___)=(___/                  #
+#    Updated: 2022/09/21 18:29:17 by safoh        \___)=(___/                  #
 #                                                                              #
 # **************************************************************************** #
 
 include makerc/colours.mk
 include makerc/config.mk
 
-################################################################################
-
 NAME			:=account.out
 
-CC				:=c++
-RM				:=rm -rfv
-CFLAGS			=-Wall -Wextra -Werror -std=c++98$(if $(FSAN), -g -fsanitize=address)$(if $(DEBUG), -g)
-
 ################################################################################
+
 all: $(NAME)
 
 $(NAME): SHELL :=/bin/bash
@@ -36,8 +31,6 @@ $(MAIN_OBJ) $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(HEADER)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
-
-################################################################################
 
 clean:
 	@$(RM) $(OBJS) $(MAIN_OBJ)
