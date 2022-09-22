@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/21 18:48:39 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/21 19:06:53 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/22 18:16:32 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Zombie::Zombie(std::string name) {
 	_name = name;
-	this->announce();
 }
 
 Zombie::~Zombie() {
