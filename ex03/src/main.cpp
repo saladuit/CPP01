@@ -5,22 +5,29 @@
 /*                                                   |:_/ || |_ _   ___  __   */
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
-/*   Created: 2022/09/21 18:58:28 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 19:45:46 by safoh        \___)=(___/                 */
+/*   Created: 2022/09/22 21:27:16 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
+/*   Updated: 2022/09/22 21:41:23 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
-#include <exception>
+#include <HumanA.hpp>
+#include <HumanB.hpp>
 
-Zombie*	zombieHorde(int N, std::string name);
-
-int	main(void) {
-	Zombie	*horde;
-
-	horde = zombieHorde(420, "Generic Zombie");
-	for (int i = 0; i < horde->getSizeHorde(); i++)
-		horde[i].announce();
-	delete[] horde;
-	return (0);
+int main() {
+	{
+		Weapon  club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	} 
+	{
+		Weapon  club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0; 
 }

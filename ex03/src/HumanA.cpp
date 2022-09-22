@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    .--.  _                 */
-/*   Weapon.hpp                                      |o_o || |                */
+/*   HumanA.cpp                                      |o_o || |                */
 /*                                                   |:_/ || |_ _   ___  __   */
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
-/*   Created: 2022/09/22 20:35:03 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 21:44:08 by safoh        \___)=(___/                 */
+/*   Created: 2022/09/22 21:17:36 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
+/*   Updated: 2022/09/22 21:43:48 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include <HumanA.hpp>
 
-# include <string>
 
-class	Weapon {
-	public:
-		Weapon(std::string type);
-		Weapon();
-		~Weapon();
+HumanA::HumanA(std::string name, Weapon& type) : _name(name), _weapon(type){
+}
+HumanA::~HumanA() {
+}
+void HumanA::attack() const {
+	std::cout << _name;
+	std::cout << " attacks with their ";
+	std::cout << _weapon.getType();
+	std::cout << std::endl;
+}
 
-		const std::string	&getType() const;
-		void				setType(const std::string& type);
-	private:
-		std::string			_type;
-};
-#endif
+HumanA::HumanA() {
+}

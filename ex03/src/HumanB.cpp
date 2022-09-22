@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    .--.  _                 */
-/*   Zombie.cpp                                      |o_o || |                */
+/*   HumanB.cpp                                      |o_o || |                */
 /*                                                   |:_/ || |_ _   ___  __   */
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
-/*   Created: 2022/09/21 18:48:39 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 19:35:24 by safoh        \___)=(___/                 */
+/*   Created: 2022/09/22 21:17:36 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
+/*   Updated: 2022/09/22 21:42:25 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include <HumanB.hpp>
 
-int		Zombie::_sizeHorde = 0;
 
-Zombie::Zombie() {
+void HumanB::setWeapon(Weapon& weapon) {
+	_weapon = weapon;
+}
+HumanB::HumanB(std::string name) : _name(name) {
+}
+HumanB::~HumanB() {
+}
+void HumanB::attack() const {
+	std::cout << _name;
+	std::cout << " attacks with their ";
+	std::cout << _weapon.getType();
+	std::cout << std::endl;
 }
 
-Zombie::~Zombie() {
-	std::cout << _name << std::endl;
+HumanB::HumanB() {
 }
-
-Zombie::Zombie(std::string name) {
-	_name = name;
-}
-
-int		Zombie::getSizeHorde() {
-	return (_sizeHorde);
-}
-void	Zombie::setName(std::string name) {
-	_sizeHorde++;
-	_name = name;
-}
-void	Zombie::announce(void) const {
-	std::cout << _name << ":\tBraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-
