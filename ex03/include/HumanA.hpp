@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/22 20:49:38 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 21:41:50 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/23 11:54:55 by saladuit     \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@
 
 class HumanA {
 	public:
-		HumanA(std::string name, Weapon& type);
+		HumanA(const std::string &name, const Weapon &type);
 		~HumanA();
 		void attack() const;
 
 	private:
-		HumanA();
-		std::string	_name;
-		Weapon		_weapon;
+		std::string		_name;
+		const Weapon	&_weapon;
 };
 
 #endif

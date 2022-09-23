@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/22 20:49:38 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 21:42:43 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/23 11:57:18 by saladuit     \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@
 
 class HumanB {
 	public:
-		HumanB(std::string name);
+		HumanB(const std::string &name);
 		~HumanB();
 		void attack() const;
-		void setWeapon(Weapon& weapon);
+		void setWeapon(const Weapon& weapon);
 		
 
 	private:
-		HumanB();
-		Weapon		_weapon;
-		std::string	_name;
+		const Weapon	&_weapon;
+		std::string		_name;
 };
 
 #endif

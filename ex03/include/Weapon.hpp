@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/22 20:35:03 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/22 21:44:08 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/23 11:49:16 by saladuit     \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class	Weapon {
 	public:
-		Weapon(std::string type);
 		Weapon();
+		Weapon(const std::string &type);
 		~Weapon();
 
 		const std::string	&getType() const;
-		void				setType(const std::string& type);
+		void				setType(const std::string &type);
 	private:
 		std::string			_type;
 };
