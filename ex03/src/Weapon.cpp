@@ -6,25 +6,32 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/22 20:41:07 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/23 11:51:23 by saladuit     \___)=(___/                 */
+/*   Updated: 2022/09/24 17:00:14 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Weapon.hpp>
 
-Weapon::Weapon(const std::string &type) : _type(type) {
+Weapon::Weapon(const std::string& type)
+    : _type(type)
+{
 }
 
-Weapon::Weapon() : _type("") {
+Weapon::Weapon()
+    : _type("")
+{
 }
 
-Weapon::~Weapon() {
+Weapon::~Weapon()
+{
 }
 
-const std::string&	Weapon::getType() const {
-	return (_type);
+const std::string& Weapon::getType() const
+{
+    return (_type);
 }
 
-void				Weapon::setType(const std::string &type) {
-	_type = type;
+void Weapon::setType(const std::string& type)
+{
+    _type = type;
 }
