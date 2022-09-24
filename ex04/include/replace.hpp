@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/24 17:10:42 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/24 17:29:56 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/24 21:23:27 by saladuit     \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 #include <string>
 #include <vector>
 
-void replace(std::vector<std::string> argv);
+void replace(int argc, char** argv);
 
 #endif

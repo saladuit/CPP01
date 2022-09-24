@@ -6,13 +6,13 @@
 #    By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /    #
 #                                                  (|     | )|_| |_| |>  <     #
 #    Created: 2022/07/16 21:50:54 by safoh        /'\_   _/`\__|\__,_/_/\_\    #
-#    Updated: 2022/09/24 17:05:30 by safoh        \___)=(___/                  #
+#    Updated: 2022/09/24 21:13:30 by saladuit     \___)=(___/                  #
 #                                                                              #
 # **************************************************************************** #
 
 CC				:=c++
 RM				:=rm -rfv
-CFLAGS			=-Wall -Wextra -Werror -std=c++98$(if $(FSAN), -g -fsanitize=address)$(if $(DEBUG), -g)
+CFLAGS			=-Wall -Wextra -Werror -std=c++11$(if $(FSAN), -g -fsanitize=address)$(if $(DEBUG), -g)
 SRCS			=replace.cpp
 MAIN 			:=main.cpp
 
