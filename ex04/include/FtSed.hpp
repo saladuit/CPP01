@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/26 08:30:27 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/26 08:31:20 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/27 17:30:52 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,26 @@
 #include <string>
 #include <fstream>
 
-typedef const std::string& Search;
-typedef const std::string& Replace;
-typedef const std::string& Filename;
+typedef const std::string t_search;
+typedef const std::string t_replace;
+typedef const std::string t_filename;
 
 class FtSed {
 public:
-    FtSed(Filename filename, Search search, Replace replace);
+    FtSed(t_filename& filename, t_search& search, t_replace& replace);
     ~FtSed();
 
-	Filename getFilename(void) const;
-	Search getSearch(void) const;
-	Replace getReplace(void) const;
+    t_filename getFilename(void) const;
+    t_search getSearch(void) const;
+    t_replace getReplace(void) const;
+
 private:
-	FtSed();
-    Filename _filename;
-    Search _search;
-    Replace _replace;
-	std::ifstream _in;
-	std::ofstream _out;
+    FtSed();
+    t_filename& _filename;
+    t_search& _search;
+    t_replace& _replace;
+    std::ifstream _in;
+    std::ofstream _out;
 };
 
 #endif
