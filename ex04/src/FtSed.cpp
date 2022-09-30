@@ -6,11 +6,12 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/27 15:19:50 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/27 18:18:09 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/30 15:35:04 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <FtSed.hpp>
+#include <string>
 
 FtSed::FtSed(t_filename& filename, t_search& search, t_replace& replace)
     : _filename(filename)
@@ -26,6 +27,23 @@ FtSed::FtSed(t_filename& filename, t_search& search, t_replace& replace)
             + ".replace");
 }
 
+std::string ft_replace(std::string* input, t_search search, t_replace replace)
+{
+    std::size_t pos;
+
+    while ((pos = (*input).find(search)) != std::string::npos) {
+        (*input).erase(pos, search.size());
+        (*input).insert(pos, replace);
+    }
+    return ((*input));
+}
+void FtSed::ftsed()
+{
+    std::string buffer;
+
+    std::getline(_in, buffer, '\0');
+    _out << ft_replace(&buffer, _search, _replace);
+}
 FtSed::~FtSed()
 {
     if (_in.good())

@@ -6,15 +6,16 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/26 08:30:27 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/09/27 18:18:10 by safoh        \___)=(___/                 */
+/*   Updated: 2022/09/30 13:53:42 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FTSED
 #define FTSED
 
-#include <string>
 #include <fstream>
+#include <iostream>
+#include <string>
 
 typedef const std::string t_search;
 typedef const std::string t_replace;
@@ -25,6 +26,7 @@ public:
     FtSed(t_filename& filename, t_search& search, t_replace& replace);
     ~FtSed();
 
+    void ftsed();
     t_filename getFilename(void) const;
     t_search getSearch(void) const;
     t_replace getReplace(void) const;
