@@ -6,11 +6,12 @@
 /*   By: safoh <safoh@student.codam.nl>             //   \ \ __| | | \ \/ /   */
 /*                                                 (|     | )|_| |_| |>  <    */
 /*   Created: 2022/09/27 15:19:50 by safoh        /'\_   _/`\__|\__,_/_/\_\   */
-/*   Updated: 2022/10/05 16:58:33 by safoh        \___)=(___/                 */
+/*   Updated: 2022/10/06 11:11:18 by safoh        \___)=(___/                 */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Harl.hpp>
+#include <ostream>
 
 const t_fdebug Harl::complaints[LVLS] = { Harl::debug, Harl::info, Harl::warning, Harl::error };
 
@@ -30,8 +31,14 @@ void Harl::complain(std::string level)
         complaints[INFO]();
     case ('W'):
         complaints[WARNING]();
-    case ('E'):
+    case ('E'): {
         complaints[ERROR]();
+        break;
+    }
+    default:
+        std::cout
+            << "[ Probably complaining about insignificant problems ]"
+            << std::endl;
     }
 }
 void Harl::debug(void)
